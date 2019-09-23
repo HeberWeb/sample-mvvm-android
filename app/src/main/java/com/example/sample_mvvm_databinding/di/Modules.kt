@@ -12,7 +12,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 val AppModule = module {
-    single { Retrofit.Builder().baseUrl("http://dog.ceo/api/").addConverterFactory(GsonConverterFactory.create()).build() }
+    single { Retrofit.Builder().baseUrl("https://dog.ceo/api/").addConverterFactory(GsonConverterFactory.create()).build() }
     single { (get() as Retrofit).create(CaoCeoApi::class.java) }
 
     single ("api"){ CaoCeoDataSource(get()) as RacaDataSource }
