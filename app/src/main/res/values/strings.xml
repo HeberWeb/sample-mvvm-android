@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">sample-mvvm-databinding</string>
+    <string name="sem_registros">Sem registros</string>
+    <string name="falha_na_listagem">Falha na listagem</string>
 </resources>
