@@ -15,9 +15,9 @@ val AppModule = module {
     single { Retrofit.Builder().baseUrl("http://dog.ceo/api/").addConverterFactory(GsonConverterFactory.create()).build() }
     single { (get() as Retrofit).create(CaoCeoApi::class.java) }
 
-    single{ CaoCeoDataSource(get())  as RacaDataSource }
-    single{ RacaRepository(get()) as RacaDataSource }
-    viewModel { RacasViewModel(get(), androidApplication())}
+    single ("api"){ CaoCeoDataSource(get()) as RacaDataSource }
+    single("repository"){ RacaRepository(get("api")) as RacaDataSource }
+    viewModel { RacasViewModel(get("repository"), androidApplication())}
 }
 
 val appModules = listOf(AppModule)

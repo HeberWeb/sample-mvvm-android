@@ -1,9 +1,9 @@
 package com.example.sample_mvvm_databinding.data
 
-class RacaRepository(private val remoteDataSource: RacaDataSource) :
+class RacaRepository(private val caoCeoDataSource: RacaDataSource) :
     RacaDataSource {
     override fun listAll(success: (List<Raca>) -> Unit, failure: () -> Unit) {
-        remoteDataSource.listAll(success, failure)
+        caoCeoDataSource.listAll(success, failure)
     }
 
 //    override fun save(raca: Raca) {
