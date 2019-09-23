@@ -21,7 +21,7 @@ class CaoCeoDataSource(val caoCeoApi: CaoCeoApi) : RacaDataSource {
                 if (response.isSuccessful){
                     val racas = mutableListOf<Raca>()
                     response.body()?.message?.forEach {
-                        racas.add(Raca(it.hashCode(), it))
+                        racas.add(Raca(it))
                     }
                     success(racas)
                 } else {
@@ -30,9 +30,5 @@ class CaoCeoDataSource(val caoCeoApi: CaoCeoApi) : RacaDataSource {
             }
 
         })
-    }
-
-    override fun save(raca: Raca) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }
